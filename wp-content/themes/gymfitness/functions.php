@@ -1,5 +1,15 @@
 <?php
 
+function gymfitness_setup()
+{
+  // IMAGENES DESTACADAS.
+  add_theme_support('post-thumbnails');
+
+  // TÍTULOS PARA SEO
+  add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'gymfitness_setup');
+
 function gymfitness_menus()
 {
   register_nav_menus(array(
