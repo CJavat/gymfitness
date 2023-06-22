@@ -8,7 +8,11 @@ get_header();
   $autor = get_queried_object();
   ?>
 
-  <h2 class="text-center text-primary"> Categoría: <?php echo $autor->name ?></h2>
+  <h2 class="text-center text-primary"> Autor: <?php echo $autor->data->display_name ?></h2>
+
+  <p class="text-center">
+    <?php echo get_the_author_meta('description', $autor->data->ID); ?>
+  </p>
   <ul class="listado-grid">
     <?php
     while (have_posts()) : the_post();

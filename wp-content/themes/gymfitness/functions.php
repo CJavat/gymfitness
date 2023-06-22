@@ -2,6 +2,7 @@
 
 // INCLUDES
 require get_template_directory() . '/includes/widgets.php';
+require get_template_directory() . '/includes/queries.php';
 
 function gymfitness_setup()
 {
@@ -57,3 +58,21 @@ function gymfitness_widgets()
   ));
 }
 add_action('widgets_init', 'gymfitness_widgets');
+
+// CREAR SHORTCODES.
+function gymfitness_ubicacion_shortcode()
+{
+?>
+  <div class="mapa">
+    <?php
+    if (is_page('contacto')) {
+      the_field('ubicacion');
+    }
+    ?>
+  </div>
+
+  <h2 class="text-center text-primary">Formulario de Contacto</h2>
+<?php
+  echo do_shortcode('[contact-form-7 id="79" title="Formulario 1"]');
+}
+add_shortcode('gymfitness_ubicacion', 'gymfitness_ubicacion_shortcode');
