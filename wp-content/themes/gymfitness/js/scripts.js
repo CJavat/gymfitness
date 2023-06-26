@@ -1,5 +1,5 @@
 function gymWordPress() {
-  if (document.querySelector(".swiper")) {
+  /*if (document.querySelector(".swiper")) {
     const opciones = {
       loop: true,
       autoplay: {
@@ -35,7 +35,26 @@ function gymWordPress() {
         easing: "easeOutExpo",
         delay: 1000,
       });
-  }
+  }*/
+
+  const hamburger = document.querySelector(".hamburger-menu svg");
+  hamburger.addEventListener("click", function (e) {
+    const menuPrincipal = document.querySelector(".contenedor-menu");
+
+    menuPrincipal.classList.toggle("mostrar");
+  });
 }
 
 document.addEventListener("DOMContentLoaded", gymWordPress);
+
+window.onscroll = function () {
+  const scroll = window.scrollY;
+
+  const barraNav = document.querySelector(".barra-navegacion");
+
+  if (scroll > 300) {
+    barraNav.classList.add("fixed-top");
+  } else {
+    barraNav.classList.remove("fixed-top");
+  }
+};

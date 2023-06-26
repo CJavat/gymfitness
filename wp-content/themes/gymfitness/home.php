@@ -11,6 +11,10 @@ get_header();
     endwhile;
     ?>
   </ul>
+
+  <?php
+  the_posts_pagination();
+  ?>
 </main>
 
 <?php

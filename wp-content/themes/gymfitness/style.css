@@ -108,23 +108,27 @@ hr {
 }
 
 /* BOTONES */
+.form-submit .submit,
 .boton {
     background-color: var(--blanco);
     color: var(--negro);
     padding: 1rem 3rem;
     display: block;
     flex: 1;
+    width: 100%;
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
     border-radius: .5rem;
     margin: 1rem 0;
+    border: none;
 }
 
 @media (min-width: 768px) {
     .boton {
         display: inline-block;
         flex: 0 0 auto;
+        width: auto;
     }
 }
 
@@ -181,6 +185,24 @@ body.home .header {
     font-size: 2rem;
 }
 
+@media (min-width: 992px) {
+    .fixed-top {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--gris-oscuro);
+        padding: 1rem 5rem;
+        height: 10rem;
+        z-index: 1000;
+        transition: background-color 300ms ease-in-out;
+    }
+
+    .fixed-top .logo {
+        width: 12rem;
+    }
+}
+
 .header {
     background-color: var(--gris-oscuro);
     padding: 2rem 0;
@@ -202,6 +224,40 @@ body.home .header {
 /* .menu-principal {
     display: none;
 } */
+
+.hamburger-menu:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+.contenedor-menu {
+    opacity: 0;
+    max-height: 0;
+    transition-delay: 100ms 300ms;
+    transition-property: opacity, max-height;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+}
+
+@media (min-width: 768px) {
+    .contenedor-menu {
+        all: unset;
+    }
+}
+
+.mostrar {
+    opacity: 1;
+    max-height: 36rem;
+    transition-delay: 100ms 300ms;
+    transition-property: max-height, opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+}
 
 @media (min-width: 768px) {
     .menu-principal {
@@ -503,6 +559,11 @@ body.home .header {
     gap: .5rem;
 }
 
+.meta-info .post-categories {
+    display: flex;
+    gap: 1rem;
+}
+
 /* FORMULARIO DE CONTACTO */
 .wpcf7-form label {
     font-weight: 700;
@@ -754,4 +815,90 @@ body.home .header {
 .ml2 .letter {
     display: inline-block;
     line-height: 1em;
+}
+
+/* COMENTARIOS */
+.comentarios {
+    margin-top: 5rem;
+    width: min(95%, 60rem);
+    margin: 5rem auto 0 auto;
+}
+
+.comment-reply-title {
+    color: var(--primario);
+    text-align: center;
+}
+
+.logged-in-as a {
+    color: var(--primario);
+}
+
+.comment-form-comment label {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.comentarios input[type="text"],
+.comment-form-comment textarea {
+    border: 1px solid var(--gris-claro);
+    width: 100%;
+    padding: 1rem;
+}
+
+.form-submit .submit {
+    background-color: var(--primario);
+    color: var(--blanco);
+}
+
+.comentarios input[type="text"] {
+    margin: .5rem 0;
+}
+
+h3.comentarios {
+    margin: 3rem 0;
+}
+
+.lista-comentarios .comment {
+    background-color: var(--gris-claro);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+}
+
+.lista-comentarios a {
+    color: var(--primario);
+}
+
+.lista-comentarios cite {
+    color: var(--primario);
+    font-style: 2rem;
+    font-weight: 700;
+}
+
+.lista-comentarios .children .comment {
+    background-color: var(--blanco);
+}
+
+/* PAGINACIÓN */
+.pagination .screen-reader.text {
+    visibility: hidden;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.nav-links a {
+    font-size: 1.4rem;
+    color: var(--primario);
+    font-weight: 700;
+    padding: .5rem;
+}
+
+.nav-links .current {
+    font-size: 1.4rem;
+    padding: .5rem;
 }
